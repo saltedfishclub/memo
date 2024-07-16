@@ -39,9 +39,5 @@ public class Memo implements ModInitializer {
             return loadConfig();
         }
         return cfg;
-        //{
-        //  "alternativeSessionHost": "https://rev1.sfclub.cc/mj_sess",
-        //  "alternativeServicesHost": "https://rev1.sfclub.cc/mj_srv"
-        //}
     }
 }

@@ -13,9 +13,6 @@
   "environment": "server",
   "accessWidener": "memo.accesswidener",
   "entrypoints": {
-    "client": [
-      "cc.sfclub.sfcraft.memo.client.MemoClient"
-    ],
     "main": [
       "cc.sfclub.sfcraft.memo.Memo"
     ]
