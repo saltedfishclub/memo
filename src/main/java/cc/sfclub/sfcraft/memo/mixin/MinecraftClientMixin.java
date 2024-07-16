@@ -120,7 +120,7 @@ public abstract class MinecraftClientMixin {
                 retried++;
                 if (retried != MAX_RETRIES) {
                     var sec = Math.pow(2, retried);
-                    LOGGER.warn("Failed to request " + req.uri() + ", retrying after " + sec + "s", e);
+                    LOGGER.warn("Failed to request " + req.uri() + ", retrying after " + sec + "s: {}", e.getMessage());
                     TimeUnit.SECONDS.sleep((long) sec);
                 }
             }

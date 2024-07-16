@@ -4,13 +4,14 @@
   "package": "cc.sfclub.sfcraft.memo.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "MinecraftClientMixin"
   ],
   "client": [
   ],
   "server": [
     "MinecraftServerMixin",
     "ServerLoginNetworkHandlerMixin",
-    "MinecraftClientMixin"
+    "MainMixin"
   ],
   "injectors": {
     "defaultRequire": 1

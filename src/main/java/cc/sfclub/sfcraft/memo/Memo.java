@@ -29,10 +29,19 @@ public class Memo implements ModInitializer {
         var _cfg = CONFIG_ROOT.resolve("memo.json");
         if (Files.notExists(_cfg)) {
             var cfg = new MemoConfig();
-            Files.createDirectory(CONFIG_ROOT);
+            if (Files.notExists(CONFIG_ROOT)) Files.createDirectory(CONFIG_ROOT);
             Files.writeString(_cfg, GSON.toJson(cfg));
             return cfg;
         }
-        return GSON.fromJson(Files.readString(_cfg), MemoConfig.class);
+        var cfg = GSON.fromJson(Files.readString(_cfg), MemoConfig.class);
+        if (cfg == null) {
+            Files.delete(_cfg);
+            return loadConfig();
+        }
+        return cfg;
+        //{
+        //  "alternativeSessionHost": "https://rev1.sfclub.cc/mj_sess",
+        //  "alternativeServicesHost": "https://rev1.sfclub.cc/mj_srv"
+        //}
     }
 }
