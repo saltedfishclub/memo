@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "memo",
+  "version": "${version}",
+  "name": "memo",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/icebear67/memo"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/memo/icon.png",
+  "environment": "server",
+  "accessWidener": "memo.accesswidener",
+  "entrypoints": {
+    "client": [
+      "cc.sfclub.sfcraft.memo.client.MemoClient"
+    ],
+    "main": [
+      "cc.sfclub.sfcraft.memo.Memo"
+    ]
+  },
+  "mixins": [
+    "memo.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

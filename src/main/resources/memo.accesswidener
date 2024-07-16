@@ -1,0 +1,3 @@
+accessWidener v2 named
+accessible class net/minecraft/server/network/ServerLoginNetworkHandler$State
+accessible method net/minecraft/util/Util uncaughtExceptionHandler (Ljava/lang/Thread;Ljava/lang/Throwable;)V
