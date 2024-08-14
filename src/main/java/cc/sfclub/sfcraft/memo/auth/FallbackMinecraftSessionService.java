@@ -30,7 +30,7 @@ public class FallbackMinecraftSessionService implements MinecraftSessionService 
             try {
                 service.joinServer(profileId, authenticationToken, serverId);
                 return;
-            } catch (AuthenticationException e) {
+            } catch (AuthenticationUnavailableException e) {
                 log.warn("Failed to joinServer with session service #" + i, e);
             }
             i++;
@@ -46,13 +46,13 @@ public class FallbackMinecraftSessionService implements MinecraftSessionService 
                 log.info("Checking player {} with service {}", profileName, service.toString());
                 var profile = service.hasJoinedServer(profileName, serverId, address);
                 if (profile == null) {
-                    throw new IllegalStateException("null user profile is returned");
+                    return profile;
                 }
                 if (profile.profile() != null) {
                     pinnedServices.put(profile.profile(), service);
                 }
                 return profile;
-            } catch (AuthenticationUnavailableException | IllegalStateException exception) {
+            } catch (AuthenticationUnavailableException exception) {
                 log.warn("Failed to check join state with session service #" + i);
                 i++;
             }

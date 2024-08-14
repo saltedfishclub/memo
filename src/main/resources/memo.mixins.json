@@ -10,7 +10,6 @@
   ],
   "server": [
     "MinecraftServerMixin",
-    "ServerLoginNetworkHandlerMixin",
     "MainMixin"
   ],
   "injectors": {
